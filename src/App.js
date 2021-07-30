@@ -6,7 +6,11 @@ import { ContactsPage } from "./containers/contactsPage/ContactsPage";
 
 function App() {
   // Both are stored in an array of objects
-  const [contacts, setContact] = useState([]); 
+  const [contacts, setContact] = useState([{
+    name: "Me",
+    phone: "123456789",
+    email: "test@gmail.com"
+  }]); 
   const [appointments, setAppointments] = useState([]);
 
   const ROUTES = {
@@ -31,8 +35,6 @@ function App() {
     })
   }
 
-  console.log(contacts)
-
   return (
     <>
       <nav>
@@ -54,7 +56,7 @@ function App() {
           </Route>
           <Route path={ROUTES.APPOINTMENTS}>
             {/* Add props to AppointmentsPage */}
-            <AppointmentsPage appointments={appointments} addAppointment={addAppointment} />
+            <AppointmentsPage contacts={contacts} appointments={appointments} addAppointment={addAppointment} />
           </Route>
         </Switch>
       </main>

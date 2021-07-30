@@ -1,18 +1,15 @@
 import React from "react";
 
-export const TileList = (props) => {
-  const {contacts} = props
-  console.log(contacts)
+import { Tile } from "../tile/Tile";
 
-  //this is wrong... it shoul render the tiles. 
+export const TileList = (props) => {
+  const { objList } = props;
+
+  //this is wrong... it shoul render the tiles.
   return (
-    <div style={{backgroundColor: "lightgray"}}>
-      {contacts.map(contact => (
-        <div key={contact.name}>
-          <h4> Name:{contact.name} </h4>
-          <p> Phone:{contact.phone} </p>
-          <p> Email{contact.email} </p>
-        </div>
+    <div style={{ backgroundColor: "lightgray" }}>
+      {objList.map((obj, i) => (
+        <Tile key={i} obj={obj} />
       ))}
     </div>
   );

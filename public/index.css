@@ -78,5 +78,6 @@ select {
 }
 
 .tile-container {
+  padding: 0px 6px;
   margin-bottom: 20px;
 }
